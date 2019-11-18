@@ -22,7 +22,6 @@ $ ->
   gui = new DAT.GUI()
   guiWorld = gui.addFolder 'world'
   guiWorld.open()
-  guiWorld.add world, 'save'
   guiWorld.add world, 'load'
   guiWorld.add world, 'clear'
   guiWorld.add world, 'generateMap'
@@ -30,8 +29,6 @@ $ ->
   guiVisualizer.open()
   guiVisualizer.add(visualizer, 'running').listen()
   guiVisualizer.add(visualizer, 'debug').listen()
-  guiVisualizer.add(visualizer.zoomer, 'scale', 0.1, 2).listen()
   guiVisualizer.add(visualizer, 'timeFactor', 0.1, 10).listen()
   guiWorld.add(world, 'carsNumber').min(0).max(200).step(1).listen()
-  guiWorld.add(world, 'instantSpeed').step(0.00001).listen()
-  gui.add(settings, 'lightsFlipInterval', 0, 400, 0.01).listen()
+  gui.add(settings, 'toggleExpress').listen()

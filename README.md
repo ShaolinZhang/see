@@ -10,17 +10,9 @@
 
 ### ✨ [Demo](https://micromec.org/hack/ShaolinZhang-rapid)
 
-## Install
-
-```sh
-npm install
-```
-
 ## Usage
 
-```sh
-gulp
-```
+Simply serve the index.html file with all folders within this repository.
 
 ## Author
 
