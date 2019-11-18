@@ -31,4 +31,7 @@ class Intersection
     road.update() for road in @roads
     road.update() for road in @inRoads
 
+  copeEmergency: (sideId, turnNumber) ->
+    @controlSignals.copeEmergency(sideId, turnNumber)
+
 module.exports = Intersection

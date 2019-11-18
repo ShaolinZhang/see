@@ -10,6 +10,8 @@ class ControlSignals
     @phaseOffset = 100 * random()
     @time = @phaseOffset
     @stateNum = 0
+    @emergency = false
+    @emergencySituation = [-1,-1]
 
   @copy: (controlSignals, intersection) ->
     if !controlSignals?
@@ -47,6 +49,12 @@ class ControlSignals
 
   @property 'state',
     get: ->
+      if @emergency is true
+        emergencyState = [[0,0,0], [0,0,0], [0,0,0], [0,0,0]]
+        eside = @emergencySituation[0]
+        eturn = @emergencySituation[1]
+        emergencyState[eside] = [1,1,1]
+        return emergencyState
       stringState = @states[@stateNum % @states.length]
       if @intersection.roads.length <= 2
         stringState = ['LFR', 'LFR', 'LFR', 'LFR']
@@ -54,11 +62,16 @@ class ControlSignals
 
   flip: ->
     @stateNum += 1
+    @emergency = false
 
   onTick: (delta) =>
     @time += delta
     if @time > @flipInterval
       @flip()
       @time -= @flipInterval
+
+  copeEmergency: (sideId, turnNumber) ->
+    @emergency = true
+    @emergencySituation = [sideId, turnNumber]
 
 module.exports = ControlSignals
