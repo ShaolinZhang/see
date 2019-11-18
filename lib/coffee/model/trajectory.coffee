@@ -5,7 +5,7 @@ require '../helpers'
 LanePosition = require './lane-position'
 Curve = require '../geom/curve'
 _ = require 'underscore'
-settings = require '../../settings.coffee'
+settings = require '../settings.coffee'
 
 class Trajectory
   constructor: (@car, lane, position) ->

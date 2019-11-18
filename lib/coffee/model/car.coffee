@@ -8,7 +8,7 @@ Trajectory = require './trajectory'
 class Car
   constructor: (lane, position) ->
     @id = _.uniqueId 'car'
-    @isEmergency = if (_.random(0, 100) < 1.5) then true else false
+    @isEmergency = if (_.random(0, 100) < 1.2) then true else false
     @color = if @isEmergency then 1 else 120
     @_speed = 0
     @width = if @isEmergency then 3 else 1.7
