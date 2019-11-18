@@ -20,6 +20,7 @@ class Car
     @trajectory = new Trajectory this, lane, position
     @alive = true
     @preferedLane = null
+    @isemergency = false
 
   @property 'coords',
     get: -> @trajectory.coords
