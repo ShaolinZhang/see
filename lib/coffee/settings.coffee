@@ -18,5 +18,6 @@ settings =
   lightsFlipInterval: 160
   gridSize: 14
   defaultTimeFactor: 5
+  toggleExpress: false
 
 module.exports = settings
