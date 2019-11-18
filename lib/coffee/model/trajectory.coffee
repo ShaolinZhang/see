@@ -5,6 +5,7 @@ require '../helpers'
 LanePosition = require './lane-position'
 Curve = require '../geom/curve'
 _ = require 'underscore'
+settings = require '../settings.coffee'
 
 class Trajectory
   constructor: (@car, lane, position) ->
@@ -67,8 +68,8 @@ class Trajectory
     intersection = @nextIntersection
     turnNumber = sourceLane.getTurnDirection nextLane
     sideId = sourceLane.road.targetSideId
-    # if @car.isEmergency is true
-    #   intersection.copeEmergency(sideId, turnNumber)
+    if settings.toggleExpress and @car.isEmergency is true
+     intersection.copeEmergency(sideId, turnNumber)
     intersection.controlSignals.state[sideId][turnNumber]
 
   getDistanceToIntersection: ->
