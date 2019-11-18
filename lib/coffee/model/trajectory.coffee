@@ -67,6 +67,8 @@ class Trajectory
     intersection = @nextIntersection
     turnNumber = sourceLane.getTurnDirection nextLane
     sideId = sourceLane.road.targetSideId
+    if @car.isEmergency is true
+      intersection.copeEmergency(sideId, turnNumber)
     intersection.controlSignals.state[sideId][turnNumber]
 
   getDistanceToIntersection: ->

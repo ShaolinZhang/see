@@ -9,7 +9,7 @@ class Car
   constructor: (lane, position) ->
     @id = _.uniqueId 'car'
     @isEmergency = if (_.random(0, 100) < 1) then true else false
-    @color = if @isEmergency then 0 else (300 + 240 * random() | 0) % 360
+    @color = if @isEmergency then 1 else 120
     @_speed = 0
     @width = if @isEmergency then 3 else 1.7
     @length = if @isEmergency then 10 else 3 + 2 * random()
