@@ -8,10 +8,11 @@ Trajectory = require './trajectory'
 class Car
   constructor: (lane, position) ->
     @id = _.uniqueId 'car'
-    @color = (300 + 240 * random() | 0) % 360
+    @isEmergency = if (_.random(0, 100) < 1) then true else false
+    @color = if @isEmergency then 0 else (300 + 240 * random() | 0) % 360
     @_speed = 0
-    @width = 1.7
-    @length = 3 + 2 * random()
+    @width = if @isEmergency then 3 else 1.7
+    @length = if @isEmergency then 10 else 3 + 2 * random()
     @maxSpeed = 30
     @s0 = 2
     @timeHeadway = 1.5
@@ -20,7 +21,6 @@ class Car
     @trajectory = new Trajectory this, lane, position
     @alive = true
     @preferedLane = null
-    @isemergency = false
 
   @property 'coords',
     get: -> @trajectory.coords
