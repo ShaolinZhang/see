@@ -8,6 +8,8 @@
 
 > Smart-city Emergency Express (SEE)
 
+A submission to 11/18/2019 5G MEC Akraino Hackathon hosted by Qualcomm
+
 ### ✨ [Demo](https://micromec.org/hack/ShaolinZhang-rapid)
 
 ## Usage
