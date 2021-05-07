@@ -45,7 +45,7 @@
     "gulp-util": "~2.2",
     "jquery": "~2.1",
     "jquery-mousewheel": "~3.1",
-    "underscore": "~1.6",
+    "underscore": "~1.12",
     "vinyl-source-stream": "~0.1"
   }
 }
